@@ -7,7 +7,7 @@ snake[0] = {
     x: 8 * box,
     y: 8 * box
 }
-let direction = "up";
+let direction = "none";
 
 function create_bg() {
     context.fillStyle = "lightgreen";
@@ -20,8 +20,24 @@ function create_snake() {
         context.fillRect(snake[i].x, snake[i].y, box, box);
     }
 }
+document.addEventListener('keydown', update);
+
+function update(event) {
+    if (event.keyCode == 37 && direction != 'right') direction = 'left';
+    if (event.keyCode == 38 && direction != 'down') direction = 'up';
+    if (event.keyCode == 39 && direction != 'left') direction = 'right';
+    if (event.keyCode == 40 && direction != 'up') direction = 'down';
+}
 
 function start_game() {
+    // Lógica da transferencia do personagem(plano cartesiano)
+    //Eixo X
+    if(snake[0].x > 15 * box && direction == "right") snake[0].x = 0;
+    if(snake[0].x < 0 && direction =="left") snake[0].x = 16 * box;
+    //Eixo Y
+    if(snake[0].y > 15 * box && direction == "down") snake[0].y = 0;
+    if(snake[0].y < 0 && direction == "up") snake[0].y = 16 * box;
+
     create_bg();
     create_snake();
 
