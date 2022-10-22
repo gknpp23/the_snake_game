@@ -8,6 +8,10 @@ snake[0] = {
     y: 8 * box
 }
 let direction = "none";
+let food = {
+    x:Math.floor(Math.random() * 15 + 1) * box,
+    y:Math.floor(Math.random() * 15 + 1) * box
+}
 
 function create_bg() {
     context.fillStyle = "lightgreen";
@@ -19,6 +23,10 @@ function create_snake() {
         context.fillStyle = "darkgreen";
         context.fillRect(snake[i].x, snake[i].y, box, box);
     }
+}
+function create_fruit() {
+    context.fillStyle = "red";
+    context.fillRect(food.x, food.y, box, box);
 }
 document.addEventListener('keydown', update);
 
@@ -40,7 +48,7 @@ function start_game() {
 
     create_bg();
     create_snake();
-
+    create_fruit();
     // alocando valor para acrescimo/decrescimo
     let snake_x = snake[0].x;
     let snake_y = snake[0].y;
