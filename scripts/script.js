@@ -70,7 +70,14 @@ function start_game() {
     }
 
     // criando base de movimento (remover e adicionar)
-    snake.pop();
+    if(snake_x != food.x || snake_y != food.y){
+        snake.pop();
+    }
+    else {
+        food.x = Math.floor(Math.random() * 15 + 1) * box;
+        food.y = Math.floor(Math.random() * 15 + 1) * box;
+    }
+    
 
     let new_head = {
         x: snake_x,
