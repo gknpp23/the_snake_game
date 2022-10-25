@@ -1,5 +1,10 @@
 let canvas = document.getElementById("snake");
 let context = canvas.getContext("2d");
+let audio = new Audio('food_G1U6tlb.mp3');
+audio.addEventListener('canplaythrough', function() {
+  audio.play();
+});
+
 let box = 32;
 let snake = [];
 
@@ -14,14 +19,20 @@ let food = {
 }
 
 function create_bg() {
-    context.fillStyle = "lightgreen";
+    context.fillStyle = "black";
     context.fillRect(0, 0, 16*box, 16*box);
 }
 
 function create_snake() {
     for(i=0; i < snake.length; i++){
-        context.fillStyle = "darkgreen";
-        context.fillRect(snake[i].x, snake[i].y, box, box);
+        if(i == 0 ){
+            context.fillStyle = "#00EB00";
+            context.fillRect(snake[i].x, snake[i].y, box, box);
+        }else{
+            context.fillStyle = "#00b100";
+            context.fillRect(snake[i].x, snake[i].y, box, box);
+        }
+        
     }
 }
 function create_fruit() {
@@ -45,6 +56,16 @@ function start_game() {
     //Eixo Y
     if(snake[0].y > 15 * box && direction == "down") snake[0].y = 0;
     if(snake[0].y < 0 && direction == "up") snake[0].y = 16 * box;
+
+    // Verificação de choque entre cabeça e corpo do personagem (fim de jogo)
+    for(i = 1; i < snake.length; i++){
+        if(snake[0].x == snake[i].x && snake[0].y == snake[i].y){
+            clearInterval(game);
+            alert("---_---_--- Game Over ---_---_---");
+            
+        }
+        
+    }
 
     create_bg();
     create_snake();
@@ -74,6 +95,7 @@ function start_game() {
         snake.pop();
     }
     else {
+        audio.play();
         food.x = Math.floor(Math.random() * 15 + 1) * box;
         food.y = Math.floor(Math.random() * 15 + 1) * box;
     }
