@@ -1,9 +1,7 @@
 let canvas = document.getElementById("snake");
 let context = canvas.getContext("2d");
-let audio = new Audio('food_G1U6tlb.mp3');
-audio.addEventListener('canplaythrough', function() {
-  audio.play();
-});
+let audio = new Audio('/audio/eat_food.mp3');
+
 
 let box = 32;
 let snake = [];
@@ -61,7 +59,8 @@ function start_game() {
     for(i = 1; i < snake.length; i++){
         if(snake[0].x == snake[i].x && snake[0].y == snake[i].y){
             clearInterval(game);
-            alert("---_---_--- Game Over ---_---_---");
+            alert("Game Over");
+            window.location.reload(false);
             
         }
         
