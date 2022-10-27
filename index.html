@@ -5,15 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/style.css">
+    <link rel="shortcut icon" href="./snake.png" type="image/x-icon">
     <script defer src="/scripts/script.js"></script>
     <title>Snake Game</title>
 </head>
 <body>
-    <p>SNAKE GAME</p>
-    <div id="score">
-        <p>Score:</p>
-        <p>High Score:</p>
-    </div>
-    <canvas id="snake" width="512" height="512"></canvas>
+    
+    <header>
+        <div id="title">
+            <img src="./snake.png" alt="snake" width="100">
+            <p>SNAKE GAME</p>
+            <img src="./snake.png" alt="snake" width="100">
+        </div>
+        <div id="score">
+            <p>High Score: 
+                <span id="hscore">0</span>
+            </p>
+            <p>Score:
+                <span id="cscore">0</span>
+            </p>
+        </div>
+        <hr>
+    </header>
+    <main>
+        <canvas id="snake" width="512" height="512"></canvas>
+    </main>
+
 </body>
 </html>
