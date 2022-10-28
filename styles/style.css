@@ -6,13 +6,15 @@
     margin: 0;
     padding: 0;
     border: none;
-    font-family: 'Press Start 2P', cursive;
+    vertical-align:baseline;
+    list-style:none;
+    box-sizing: border-box;
 }
 
 body {
     background-color: #242323;
-    font-size: 5em;
     color: #00EB00;
+    font-family: 'Press Start 2P', cursive;
     height: 100vh;
     width: 95vw;
     display: flex;
@@ -22,26 +24,30 @@ body {
 
     
 }
+
 #title {
-    margin-top: 20px;
+    font-size: 70px;
+    margin-top: 2%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 #score {
-    font-size: 25px;
+    font-size: 20px;
     display: flex;
     justify-content: space-around;
-    margin-top: 10px;
+    margin-top: 3px;
 }
 hr{
     background-color: #00EB00;
     height: 10px;
-    margin-top: 7px;
+    margin-top: 2px;
 }
 canvas {
     border-style: dotted;
-    margin: 15px;
+    margin: 10px;
+    height: 73vh;
+ 
 }
 

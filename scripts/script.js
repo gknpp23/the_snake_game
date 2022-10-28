@@ -2,7 +2,7 @@ let canvas = document.getElementById("snake");
 let context = canvas.getContext("2d");
 let cscore = document.getElementById('cscore');
 let hscore = document.getElementById('hscore');
-let audio = new Audio('/audio/eat_food.mp3');
+let audio = new Audio('audio/eat_food.mp3');
 
 
 let box = 32;
