@@ -75,13 +75,17 @@ Exemplo: Caso a sua aplicação tenha alguma funcionalidade de login apresente n
 
 ## Resolvendo Problemas :exclamation:
 
-Em [issues]() foram abertos alguns problemas gerados durante o desenvolvimento desse projeto e como foram resolvidos. 
+### Erro
+Quando o personagem atravessava de um lado para o outro, era possivel desloca-lo no eixo oposto fazendo com que ele fosse reposicionado em locais inesperados.
+<br>
+<i>Ex:</i> Ao se atravessar do lado direito para o lado esquerdo, se fosse pressionado as teclas cima/baixo o personagem poderia sair no lado superior/inferior.
+
+### Solução
+Adicionei uma verificação na função responsável pela leitura das teclas. A cada vez que uma tecla era pressionada era feita uma verificação se o personagem não se encontrada na borda do eixo oposto 
 
 ## Tarefas em aberto
 
-Se for o caso, liste tarefas/funcionalidades que ainda precisam ser implementadas na sua aplicação
-
-:memo: Possibilidade de zerar o high_score 
+:memo: Possibilidade de zerar o high_score.
 
 <hr>
 
