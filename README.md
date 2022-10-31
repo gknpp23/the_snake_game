@@ -32,7 +32,12 @@
   O clássico jogo da cobrinha ! 
   Só que feito em JS
   :snake:
-  :video_game:  
+  :video_game:
+  <br>
+  Projeto proposto no Bootcamp HTML da <strong>Digital Innovation One</strong>.
+  <br>
+  
+  > Projeto base das aulas: https://github.com/SpruceGabriela/snake-the-game
 </p>
 
 <hr>
