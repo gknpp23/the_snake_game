@@ -50,6 +50,7 @@ Layout/Deploy da Aplicação :zap:
 
 > Link do deploy da aplicação: https://snakearcadegame.netlify.app/
 
+<img src="img/layout.png">
 <hr>
 
 ## Pré-requisitos 
@@ -65,23 +66,24 @@ No terminal, clone o projeto:
 ```
 git clone https://github.com/gknpp23/the_snake_game/
 ```
+Com os arquivos em sua máquina basta abrir o arquivo <strong>index.html</strong> em seu navegador padrão.
+<br><br>
+<img src="img/browser.png">
 <hr> 
-
-## Casos de Uso
-
-Explique com mais detalhes como a sua aplicação poderia ser utilizada. O uso de **gifs** aqui seria bem interessante. 
-
-Exemplo: Caso a sua aplicação tenha alguma funcionalidade de login apresente neste tópico os dados necessários para acessá-la.
 
 ## Resolvendo Problemas :exclamation:
 
-### Erro
-Quando o personagem atravessava de um lado para o outro, era possivel desloca-lo no eixo oposto fazendo com que ele fosse reposicionado em locais inesperados.
+### Erro :shit:
+Quando o personagem atravessava de um lado para o outro, era possivel deslocá-lo no eixo oposto fazendo com que ele fosse reposicionado em locais inesperados.
 <br>
 <i>Ex:</i> Ao se atravessar do lado direito para o lado esquerdo, se fosse pressionado as teclas cima/baixo o personagem poderia sair no lado superior/inferior.
 
-### Solução
-Adicionei uma verificação na função responsável pela leitura das teclas. A cada vez que uma tecla era pressionada era feita uma verificação se o personagem não se encontrada na borda do eixo oposto 
+### Solução :heavy_check_mark:
+Adicionei uma verificação na função responsável pela leitura das teclas. A cada vez que uma tecla era pressionada era feita uma checagem se o personagem estava na bordas do eixo oposto. Caso atendesse essa condição era desabilitado as teclas senão o movimento era atribuido normalmente.
+<br>
+<i>Ex:</i> Caso fosse pressionado a tecla UP e se o movimento atual não fosse contrário (DOWN) seria verificado se o personagem não se encontra nos limites do eixo X. Se o personagem estivesse nessa posição seria encerrada a função ao contrário o personagem seria movido para cima.
+<br>
+<img src="img/fix_bug.png">
 
 ## Tarefas em aberto
 
