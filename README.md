@@ -104,4 +104,4 @@ Copyright :copyright: 2022 - The Snake Game
 
 <hr>
 
-<h2 align="center"> Desenvolvido com :hearts: por Gabriel Knupp</h2>
+<h2 align="center"> <em>&lt;/&gt;</em>  by <a href=https://github.com/gknpp23" target="_blank">Gabriel Knupp</a> </h2>
